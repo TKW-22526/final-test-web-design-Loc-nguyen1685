@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pokémon Card Shop</h1>
+    <nav>
+        <a href="gioi-thieu.html">Giới thiệu</a>
+        <a href="san-pham.html">Sản phẩm</a>
+        <a href="lien-he.html">Liên hệ</a>
+    </nav>
+</header>
+
+<section class="box">
+    <h2>Thêm sản phẩm mới</h2>
+
+    <div class="form-add">
+        <input type="text" id="productName" placeholder="Tên sản phẩm">
+        <input type="number" id="productPrice" placeholder="Giá sản phẩm">
+        <input type="text" id="productImage" placeholder="Tên ảnh VD: pikachu.jpg">
+        <select id="productType">
+            <option value="card">Card Pokémon</option>
+            <option value="accessory">Phụ kiện</option>
+        </select>
+        <button onclick="addProduct()">Thêm sản phẩm</button>
+    </div>
+</section>
+
+<section class="box">
+    <h2>Card Pokémon</h2>
+    <div class="products" id="cardList"></div>
+</section>
+
+<section class="box">
+    <h2>Phụ kiện</h2>
+    <div class="products" id="accessoryList"></div>
+</section>
+
+<section class="cart-box">
+    <h2>Giỏ hàng</h2>
+    <ul id="cartList"></ul>
+    <h3 id="totalPrice">Tổng tiền: 0đ</h3>
+    <button class="delete-all" onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
+</section>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
