@@ -12,7 +12,7 @@ let products = [
         price:1500000,
         image:"../assets/img/charizardVmax.jpg",
         type:"card",
-        desc:"Charizard VMAX là một trong những card được yêu thích nhất trong Pokémon TCG.",
+        desc:"Charizard VMAX là một trong những card được yêu thích nhất.",
         link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Charizard"
     },
     {
@@ -22,6 +22,46 @@ let products = [
         type:"card",
         desc:"Mewtwo GX có thiết kế đẹp, giá trị sưu tầm cao.",
         link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Mewtwo"
+    },
+    {
+        name:"Lucario V",
+        price:420000,
+        image:"../assets/img/lucari.jpg",
+        type:"card",
+        desc:"Lucario V mạnh mẽ và được nhiều người chơi sử dụng.",
+        link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Lucario"
+    },
+    {
+        name:"Rayquaza VMAX",
+        price:1200000,
+        image:"../assets/img/rồngvmax.jpg",
+        type:"card",
+        desc:"Rayquaza VMAX là card rồng nổi tiếng.",
+        link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Rayquaza"
+    },
+    {
+        name:"Gengar VMAX",
+        price:1100000,
+        image:"../assets/img/gen.jpg",
+        type:"card",
+        desc:"Gengar VMAX thuộc nhóm card được nhiều người yêu thích.",
+        link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Gengar"
+    },
+    {
+        name:"Umbreon V",
+        price:750000,
+        image:"../assets/img/um.jpg",
+        type:"card",
+        desc:"Umbreon V có thiết kế đẹp và giá trị sưu tầm cao.",
+        link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Umbreon"
+    },
+    {
+        name:"Dragonite V",
+        price:680000,
+        image:"../assets/img/Dragonite V.jpg",
+        type:"card",
+        desc:"Dragonite V là Pokémon hệ rồng được yêu thích.",
+        link:"https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=Dragonite"
     },
     {
         name:"Card Sleeve",
@@ -38,7 +78,23 @@ let products = [
         type:"accessory",
         desc:"Binder dùng để lưu trữ và bảo quản bộ sưu tập card.",
         link:"https://www.tcgplayer.com/search/all/product?q=card%20binder"
-    }
+    },
+    {
+        name:"Deck Box",
+        price:150000,
+        image:"../assets/img/deck_.jpg",
+        type:"accessory",
+        desc:"Deck Box dùng để đựng bộ bài Pokémon.",
+        link:"https://www.tcgplayer.com/search/all/product?q=deck%20box"
+    },
+    {
+        name:"Playmat",
+        price:250000,
+        image:"../assets/img/images.jpg",
+        type:"accessory",
+        desc:"Playmat là thảm chơi dành cho Pokémon TCG.",
+        link:"https://www.tcgplayer.com/search/all/product?q=pokemon%20playmat"
+    },
 ];
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -74,7 +130,7 @@ function renderProducts(){
                 Thêm vào giỏ hàng
             </button>
 
-            <a href="chi-tiet.html?id=${index}">
+            <a href="${product.link}" target="_blank">
                 Chi tiết sản phẩm
             </a>
 
@@ -144,6 +200,12 @@ function renderCart(){
 
     cartList.innerHTML = "";
 
+    if(cart.length === 0){
+        cartList.innerHTML = "<li>Giỏ hàng đang trống.</li>";
+        totalPrice.textContent = "Tổng tiền: 0đ";
+        return;
+    }
+
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -180,9 +242,9 @@ function renderDetail(){
     if(!detailName) return;
 
     const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    const id = Number(params.get("id"));
 
-    if(id === null || !products[id]){
+    if(isNaN(id) || !products[id]){
         detailName.textContent = "Không tìm thấy sản phẩm";
         return;
     }
