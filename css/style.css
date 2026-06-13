@@ -400,3 +400,21 @@ footer{
         height:280px;
     }
 }
+header{
+    position:relative;
+    padding:40px 20px;
+    min-height:180px;
+    background:#0f172a;
+    text-align:center;
+}
+
+.logo-left{
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+
+.logo-left img{
+    width:280px;
+    height:auto;
+}
