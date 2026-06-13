@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Sản phẩm</title>
+    <title>Sản phẩm - Pokémon Card Shop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -22,13 +22,20 @@
     <div class="form-add">
         <input type="text" id="productName" placeholder="Tên sản phẩm">
         <input type="number" id="productPrice" placeholder="Giá sản phẩm">
-        <input type="text" id="productImage" placeholder="Tên ảnh VD: pikachu.jpg">
+        <input type="text" id="productImage" placeholder="VD: pikachuex.jpg">
+
         <select id="productType">
             <option value="card">Card Pokémon</option>
             <option value="accessory">Phụ kiện</option>
         </select>
+
         <button onclick="addProduct()">Thêm sản phẩm</button>
     </div>
+</section>
+
+<section class="box">
+    <h2>Tìm kiếm sản phẩm</h2>
+    <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." onkeyup="renderProducts()">
 </section>
 
 <section class="box">
@@ -47,6 +54,10 @@
     <h3 id="totalPrice">Tổng tiền: 0đ</h3>
     <button class="delete-all" onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
 </section>
+
+<footer>
+    <p>© 2026 Pokémon Card Shop | Thiết kế bởi Nguyễn Tấn Lộc</p>
+</footer>
 
 <script src="../js/script.js"></script>
 </body>

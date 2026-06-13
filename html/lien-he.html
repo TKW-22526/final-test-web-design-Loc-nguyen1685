@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Liên hệ</title>
+    <title>Liên hệ - Pokémon Card Shop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -23,13 +23,20 @@
     <p><b>Email:</b> pokemoncardshop@gmail.com</p>
     <p><b>Địa chỉ:</b> Trà Vinh</p>
 
-    <form>
-        <input type="text" placeholder="Họ và tên">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Nội dung liên hệ"></textarea>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Họ và tên">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="message" placeholder="Nội dung liên hệ"></textarea>
         <button type="submit">Gửi liên hệ</button>
     </form>
+
+    <p id="result"></p>
 </section>
 
+<footer>
+    <p>© 2026 Pokémon Card Shop | Thiết kế bởi Nguyễn Tấn Lộc</p>
+</footer>
+
+<script src="../js/contact.js"></script>
 </body>
 </html>

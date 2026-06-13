@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#f1f5f9;
+    background:#eef2f7;
     color:#1e293b;
 }
 
@@ -25,7 +25,7 @@ header h1{
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 12px;
+    margin:0 10px;
     padding:10px 18px;
     border-radius:25px;
     font-weight:bold;
@@ -39,7 +39,7 @@ nav a:hover{
 .hero{
     text-align:center;
     padding:90px 20px;
-    background:linear-gradient(135deg,#1d4ed8,#0f172a);
+    background:linear-gradient(135deg,#2563eb,#0f172a);
     color:white;
 }
 
@@ -61,6 +61,11 @@ nav a:hover{
     border-radius:25px;
     text-decoration:none;
     font-weight:bold;
+    margin-top:10px;
+}
+
+.btn:hover{
+    background:#eab308;
 }
 
 .box,
@@ -151,17 +156,15 @@ button:hover{
     background:#eab308;
 }
 
-.delete-btn{
-    background:#dc2626;
-}
-
-.delete-btn:hover{
-    background:#b91c1c;
-}
-
+.delete-btn,
 .delete-all{
     background:#dc2626;
-    margin-top:15px;
+    color:white;
+}
+
+.delete-btn:hover,
+.delete-all:hover{
+    background:#b91c1c;
 }
 
 .form-add{
@@ -177,16 +180,19 @@ select{
     border:1px solid #cbd5e1;
     border-radius:10px;
     font-size:15px;
+    width:100%;
 }
 
 textarea{
     height:130px;
+    resize:none;
 }
 
 form{
     display:flex;
     flex-direction:column;
     gap:15px;
+    margin-top:20px;
 }
 
 .cart-box ul{
@@ -194,11 +200,61 @@ form{
     line-height:2;
 }
 
-.cart-box li{
-    margin-bottom:8px;
-}
-
 #totalPrice{
     margin-top:15px;
     color:#dc2626;
+}
+
+.detail-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.detail-content img{
+    width:100%;
+    max-height:420px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+.detail-info h3{
+    color:#dc2626;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.detail-info p{
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+#result{
+    margin-top:15px;
+    font-weight:bold;
+    text-align:center;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+    .detail-content{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:26px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
 }
